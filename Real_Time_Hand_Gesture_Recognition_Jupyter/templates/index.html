@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GestureAI | Touchless Gesture Controls</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+<header class="topbar">
+  <a class="brand" href="#"><span class="brand-symbol">✦</span><span><b>Gesture<span class="cyan">AI</span></b><small>TOUCHLESS INTERACTION LAB</small></span></a>
+  <div class="top-right"><span class="live-dot"></span><span>LOCAL AI SYSTEM</span><i></i><span class="mono">CAM 01 / READY</span></div>
+</header>
+<main>
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="eyebrow"><span></span> COMPUTER VISION · REAL-TIME AI</div>
+      <h1>TOUCHLESS<br><em>GESTURE</em><br>CONTROLS</h1>
+      <p class="intro">A new way to interact. Use natural hand gestures to control a digital interface — no touch, just motion.</p>
+      <div class="hero-actions"><button id="startBtn" class="btn-primary"><span>↗</span> Activate camera</button><button id="stopBtn" class="btn-ghost" disabled>Stop session <span>Ⅱ</span></button></div>
+      <div class="trust-line"><span class="shield">◇</span> Runs locally on your machine <b>·</b> Camera is not recorded</div>
+    </div>
+    <div class="hero-art">
+      <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+      <div class="hud hud-top"><span class="hud-dot"></span> VISION SENSOR <b>ACTIVE</b></div>
+      <div class="camera-frame">
+        <video id="video" autoplay playsinline muted></video>
+        <div id="placeholder" class="camera-placeholder"><div class="hand-outline">✋</div><strong>YOUR HAND, IN FOCUS</strong><span>Activate camera to begin</span></div>
+        <div class="frame-corner c1"></div><div class="frame-corner c2"></div><div class="frame-corner c3"></div><div class="frame-corner c4"></div>
+        <div class="tracking-line"></div><div class="camera-label">LIVE INPUT <span>●</span></div>
+      </div>
+      <div class="floating-card card-purple"><div class="card-icon">✋</div><div><small>HAND TRACKING</small><b id="hands">0 HANDS DETECTED</b></div><span class="mini-bars"><i></i><i></i><i></i><i></i></span></div>
+      <div class="floating-card card-cyan"><div class="gesture-glyph">✌</div><div><small>GESTURE SIGNAL</small><b id="miniGesture">AWAITING INPUT</b></div></div>
+      <div class="coordinates">X 042.6 <span>Y 081.2</span><br><small>TRACKING COORDINATES / DEMO UI</small></div>
+    </div>
+  </section>
+  <section class="control-section">
+    <div class="section-heading"><div><span class="eyebrow">01 / LIVE ANALYTICS</span><h2>Gesture <em>console</em></h2></div><div class="session-status"><span class="live-dot"></span><span id="cameraState">SESSION STANDBY</span></div></div>
+    <div class="console-grid">
+      <div class="console-card prediction-card"><div class="card-head"><span>RECOGNIZED GESTURE</span><span class="tiny-tag">MODEL OUTPUT</span></div><div class="prediction-content"><div class="prediction-symbol" id="resultIcon">✋</div><div><div class="prediction-name" id="resultLabel">Waiting for input</div><p id="resultSub">Activate the camera to detect a gesture.</p></div></div><div class="confidence-row"><span>CONFIDENCE LEVEL</span><b id="confidenceText">—</b></div><div class="meter"><span id="meterFill"></span></div></div>
+      <div class="console-card"><div class="card-head"><span>GESTURE LIBRARY</span><span class="tiny-tag">BUILT-IN CLASSES</span></div><div class="gesture-grid"><div class="gesture-item"><span>🖐</span><b>Open palm</b><small>OPEN_PALM</small></div><div class="gesture-item"><span>✊</span><b>Closed fist</b><small>CLOSED_FIST</small></div><div class="gesture-item"><span>👍</span><b>Thumbs up</b><small>THUMB_UP</small></div><div class="gesture-item"><span>👎</span><b>Thumbs down</b><small>THUMB_DOWN</small></div><div class="gesture-item"><span>✌</span><b>Victory</b><small>VICTORY</small></div><div class="gesture-item"><span>☝</span><b>Pointing up</b><small>POINTING_UP</small></div></div></div>
+      <div class="console-card metrics-card"><div class="card-head"><span>SYSTEM STATUS</span><span class="tiny-tag">LOCAL</span></div><div class="metric-line"><span>AI engine</span><b>MediaPipe</b></div><div class="metric-line"><span>Inference mode</span><b>Live image</b></div><div class="metric-line"><span>Hands detected</span><b id="handsMetric">0</b></div><div class="metric-line"><span>Connection</span><b class="green" id="connection">Standby</b></div><div class="system-note"><span>✧</span> Ready to interpret your movement.</div></div>
+    </div>
+    <div id="notice" class="notice">Tip: use bright, even lighting and keep your hand fully inside the camera frame.</div>
+  </section>
+</main>
+<footer><span>GESTUREAI <b>×</b> TOUCHLESS INTERACTION</span><span>PYTHON · FLASK · OPENCV · MEDIAPIPE</span><span class="mono">LOCALHOST : 5000</span></footer>
+<canvas id="canvas" hidden></canvas>
+<script src="/static/app.js"></script>
+</body></html>
